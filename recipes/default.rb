@@ -5,14 +5,12 @@ package "unixodbc" do
 	action :install
 end
 
-### unzipping ###
+### unzipping freetds ###
 
 directory node['freetds']['path'] do
 	recursive true 
 	action :create
 end
-
-### unzipping freetds ###
 
 cookbook_file "freetds-stable.tgz" do
 	path "#{node['freetds']['path']}/freetds-stable.tgz"
