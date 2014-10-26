@@ -26,7 +26,7 @@ end
 
 execute "building freetds" do
 	cwd "#{node['freetds']['path']}/freetds-0.91"
-	command "./configure --prefix=#{node['freetds']['path']} --with-tdsver=7.0 && make && make install"
+	command "./configure --prefix=#{node['freetds']['path']} --with-tdsver=#{node['freetds']['version']} && make && make install"
 end
 
 ### installing freetds with driver manager ###
